@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .form{
+            font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<form action="simpleform.html" method="get" class="form">
+    <h2>Order Form</h2>
+    <p>What would you like to buy?</p>
+    <select name="" >
+        <option value="dr1">A</option>
+        <option value="dr2">B (+0.5$)</option>
+        <option value="dr3">C (+0.5$)</option>
+    </select>
+    <p>How many would you like to order</p>
+    <input type="radio" name="rd1">1 - $10 <br>
+    <input type="radio" name="rd2">2 - $20 <br>
+    <input type="radio" name="rd3">3 - $25 <br>
+    <p>Name <span style="color: red">*</span></p>
+    <input type="text" name="tbname1" placeholder="FirstName" size="15">
+    <input type="text" name="tbname2" placeholder="LastName" size="15"> <br>
+    <p>Email</p>
+    <input type="text" name="tbmail" size="30">
+    <p>Phone Number</p>
+    <input type="text" name="tbphone1" size="5"> -
+    <input type="text" name="tbphone2" size="5"> -
+    <input type="text" name="tbphone3" size="5">
+    <p><input type="submit"  name="submit" value="Submit"></p>
+</form>
+</body>
+</html>
