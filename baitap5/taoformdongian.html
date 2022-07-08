@@ -7,34 +7,127 @@
         .f1{
             width: 650px;
             float: left;
-            border: 1px solid;
+
         }
         .f2{
             width: 650px;
             float: right;
-            border: 1px solid;
+            /*border: 1px solid;*/
         }
-        .tb{
+        .tieude{
+            text-align: center;
+            background: #ff6d3a;
+            color: white;
+        }
+        td{
+            color: orange;
+            padding: 0px;
+        }
 
-        }
     </style>
 </head>
 <body>
 <div>
     <div class="f1">
         <form action="" method="get">
-            <h2>SỞ THÍCH CỦA BẠN</h2>
-            <p>Họ và tên
-                <input type="text" name="name" class="tb">
-            </p>
-            <p>Email
-                <input type="text" name="mail" class="tb">
-            </p>
-            <p>Sở thích</p>
+            <table width="100%">
+                <tr>
+                    <td colspan="4" class="tieude"><h2>SỞ THÍCH CỦA BẠN</h2></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;color: blue">Họ và tên</td>
+                    <td colspan="3">
+                        <input type="text" name="hoten" size="40">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;color: blue">Email</td>
+                    <td colspan="3">
+                        <input type="text" name="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;color: blue">Sở thích</td>
+                    <td style="width: 10px">
+                        <input type="checkbox" name="cb" class="cbtext">Thể thao
+                    </td>
+                    <td style="width: 15%">
+                        <input type="checkbox" name="cb" class="cbtext">Âm nhạc
+                    </td>
+                    <td>
+                        <input type="checkbox" name="cb" class="cbtext">Đọc sách
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="checkbox" name="cb" class="cbtext">Lướt web</td>
+                    <td><input type="checkbox" name="cb" class="cbtext">Chơi game</td>
+                    <td><input type="checkbox" name="cb" class="cbtext">Điện ảnh</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="checkbox" name="cb" class="cbtext">Du lịch</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Gửi thông tin"></td>
+                    <td><input type="reset" value="Nhập lại"></td>
+                </tr>
+            </table>
         </form>
 
     </div>
     <div class="f2">
+        <form action="" method="get">
+            <table style="width: 100%;background: #FFFDA9" >
+                <tr style="background: #D4FDD6">
+                    <td colspan="2"><H2 style="color: #0E3CFE">ĐĂNG KÝ HỌC VIÊN</H2></td>
+                </tr>
+                <tr>
+                    <td style="color: blue">Họ và tên</td>
+                    <td><input type="text" name="ht" size="30"></td>
+                </tr>
+                <tr>
+                    <td style="color: blue">Ngày sinh</td>
+                    <td><input type="text" name="ns" size="16"></td>
+                </tr>
+                <tr>
+                    <td style="color: blue">Giới tính</td>
+                    <td style="color: black">
+                        <input type="radio" name="gt">Nam
+                        <input type="radio" name="gt">Nữ
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: blue">Địa chỉ</td>
+                    <td><textarea name="dc" cols="20" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td style="color: blue">Lớp</td>
+                    <td><select name="lop">
+                        <option>--Chọn lớp--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td style="color: blue">Email</td>
+                    <td><input type="text" name="em" ></td>
+                </tr><tr>
+                <td style="color: blue">Điện thoại</td>
+                <td><input type="text" name="dt" ></td>
+            </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Đăng ký">
+                        <input type="reset" value="Nhập lại"></td>
+                    </td>
+                </tr>
+            </table>
+
+        </form>
 
     </div>
 </div>
