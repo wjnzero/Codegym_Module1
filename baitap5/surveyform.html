@@ -1,10 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+  <form name="formsurvey" method="get" action="">
+      <h2>Market Research Survey</h2>
+      <p>Please take a few moments to complete this satisfaction survey. </p>
+      <p>What is your age range?</p>
+          <select name="dotuoi" tabindex="0">
+            <option value="18-24">
+              18-24
+            </option>
+            <option value="25-34">
+              25-34
+            </option>
+            <option value="35-50">
+              35-50
+            </option>
+            <option value="50+">
+              50+
+            </option>
+          </select>
+
+      <p>What is your yearly income range?</p>
+          <select name="luong" tabindex="0">
+            <option value="$0 - $25,000">
+              $0 - $25,000
+            </option>
+            <option value="$25,001 - $50,000">
+              $25,001 - $50,000
+            </option>
+            <option value="$50,001 - $100,000">
+              $50,001 - $100,000
+            </option>
+            <option value="$100,000+">
+              $100,000+
+            </option>
+          </select>
+      <p>Gender</p>
+    <input type="radio" name="gt">Male
+    <input type="radio" name="gt">Female
+    <p>Which of the following products have your purchased in the last 2 months. Please check all that apply.</p>
+    <input type="checkbox" name="cb">Product 1
+    <br>
+    <input type="checkbox" name="cb">Product 2
+    <br>
+    <input type="checkbox" name="cb">Product 3
+    <br>
+    <p>How often would you use our new product?</p>
+    <input type="radio" name="often">Dailybr
+    <br>
+    <input type="radio" name="often">Weekly
+    <br>
+    <input type="radio" name="often">Monthly
+    <br>
+    <p>What would you pay for the new product?</p>
+
+		<input id="Field807" name="Field807" type="text" class="field text currency nospin" value="" size="10" tabindex="0">
+		<label for="Field807">Dollars</label>
+		<input id="Field807-1" name="Field807-1" type="text" class="field text nospin" value="" size="2" maxlength="2" tabindex="0">
+		<label for="Field807-1">Cents</label>
+    <p>What features would you like to see in the new product.</p>
+        <textarea name="Field806" spellcheck="true" rows="10" cols="50" tabindex="0" placeholder="">
+        </textarea>
+        <table>
+          <caption id="title403">
+            Please rate your level of agreement with the following statements.
+          </caption>
+          <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <td>Strongly Disagree</td>
+            <td>Disagree</td>
+            <td>Agree</td>
+            <td>Strongly Agree</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr role="radiogroup" aria-labelledby="Field-403" class="statement403">
+            <th>
+              <label id="Field-403">
+                Our products are priced fairly.
+              </label>
+            </th>
+            <td title="Strongly Disagree">
+              <input id="Field403_1" name="Field403" type="radio" role="radio" tabindex="0" aria-checked="false" value="Strongly Disagree">
+              <label for="Field403_1">1</label>
+            </td>
+            <td title="Disagree">
+              <input id="Field403_2" name="Field403" type="radio" role="radio" tabindex="0" aria-checked="false" value="Disagree">
+              <label for="Field403_2">2</label>
+            </td>
+            <td title="Agree">
+              <input id="Field403_3" name="Field403" type="radio" role="radio" tabindex="0" aria-checked="false" value="Agree">
+              <label for="Field403_3">3</label>
+            </td>
+            <td title="Strongly Agree">
+              <input id="Field403_4" name="Field403" type="radio" role="radio" tabindex="0" aria-checked="false" value="Strongly Agree">
+              <label for="Field403_4">4</label>
+            </td>
+          </tr>
+          <tr role="radiogroup" aria-labelledby="Field-404" class="alt statement404">
+            <th>
+              <label id="Field-404">
+                Our products are high quality.
+              </label>
+            </th>
+            <td title="Strongly Disagree">
+              <input id="Field404_1" name="Field404" type="radio" role="radio" tabindex="0" aria-checked="false" value="Strongly Disagree">
+              <label for="Field404_1">1</label>
+            </td>
+            <td title="Disagree">
+              <input id="Field404_2" name="Field404" type="radio" role="radio" tabindex="0" aria-checked="false" value="Disagree">
+              <label for="Field404_2">2</label>
+            </td>
+            <td title="Agree">
+              <input id="Field404_3" name="Field404" type="radio" role="radio" tabindex="0" aria-checked="false" value="Agree">
+              <label for="Field404_3">3</label>
+            </td>
+            <td title="Strongly Agree">
+              <input id="Field404_4" name="Field404" type="radio" role="radio" tabindex="0" aria-checked="false" value="Strongly Agree">
+              <label for="Field404_4">4</label>
+            </td>
+          </tr>
+          <tr role="radiogroup" aria-labelledby="Field-405" class="statement405">
+            <th>
+              <label id="Field-405">
+                You would recommend our product to a friend or coworker.
+              </label>
+            </th>
+            <td title="Strongly Disagree">
+              <input id="Field405_1" name="Field405" type="radio" role="radio" tabindex="0" aria-checked="false" value="Strongly Disagree">
+              <label for="Field405_1">1</label>
+            </td>
+            <td title="Disagree">
+              <input id="Field405_2" name="Field405" type="radio" role="radio" tabindex="0" aria-checked="false" value="Disagree">
+              <label for="Field405_2">2</label>
+            </td>
+            <td title="Agree">
+              <input id="Field405_3" name="Field405" type="radio" role="radio" tabindex="0" aria-checked="false" value="Agree">
+              <label for="Field405_3">3</label>
+            </td>
+            <td title="Strongly Agree">
+              <input id="Field405_4" name="Field405" type="radio" role="radio" tabindex="0" aria-checked="false" value="Strongly Agree">
+              <label for="Field405_4">4</label>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <div>
+          <input type="hidden" name="currentPage" id="currentPage" value="Evsvr2wuslashAbQKTfplkTXUEOwQJuCaYnw8JgQ0BYME9Ix8=">
+
+          <input id="saveForm" name="saveForm" class="btTxt submit" type="submit" value="Submit">
+        </div>
+  </form>
 </body>
 </html>
