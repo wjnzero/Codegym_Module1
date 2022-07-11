@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .b1{
+            float: left;
+        }
+        .b2{
+            margin: auto;
+            width: 20%;
+        }
+        .b3{
+            margin: auto;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+<div class="b1">
+    <p>bai1</p>
+<label for="toan">Nhập điểm toán: </label><input type="text" id="toan" ><br>
+<label for="ly">Nhập điểm lý: </label><input type="text" id="ly"><br>
+<label for="hoa">Nhập điểm hóa: </label><input type="text" id="hoa">
+<button onclick="bai1()">Diem trung binh & tong</button>
+<p id="demo"></p>
+</div>
+<div class="b2">
+    <p>bai2</p>
+    <label for="toan">Nhap độ 0C: </label><input type="text" id="doc" ><br>
+    <button onclick="bai2()">convert do F</button>
+    <p id="demo1"></p>
+</div>
+<div class="b3">
+    <p>bai3+4</p>
+    <label for="toan">Nhap ban kinh </label><input type="text" id="bk" ><br>
+    <button onclick="bai3()">tinh chu vi + dien tich hinh tron</button>
+    <p id="demo2"></p>
+</div>
+<script>
+    function bai1() {
+        let t = parseInt(document.getElementById("toan").value);
+        let l = parseInt(document.getElementById("ly").value);
+        let h = parseInt(document.getElementById("hoa").value);
+        document.getElementById("demo").innerHTML = "diem trung binh: "+(t+l+h)/3+ " tong: "+(t+l+h);
+    }
+    function bai2() {
+        let dc = parseInt(document.getElementById("doc").value);
+        document.getElementById("demo1").innerHTML = ((dc/5)*9)+32;
+    }
+    function bai3() {
+        let r = parseInt(document.getElementById("bk").value);
+        document.getElementById("demo2").innerHTML = "chu vi: "+2*r* Math.PI+ " dien tich: "+r*r* Math.PI;
+    }
+</script>
+
+</body>
+</html>
