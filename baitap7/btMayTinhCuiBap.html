@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="st1" placeholder="Nhap so thu nhat">
+<input type="text" id="st2" placeholder="Nhap so thu hai">
+<input type="button" value="+" onclick="cong()">
+<input type="button" value="-" onclick="tru()">
+<input type="button" value="*" onclick="nhan()">
+<input type="button" value="/" onclick="chia()">
+<p id="kq">.</p>
+<script>
+    function cong() {
+    let a=document.getElementById("st1").value;
+    let b=document.getElementById("st2").value;
+        document.getElementById("kq").innerHTML= parseInt(a)+parseInt(b);
+    }
+    function tru() {
+        let a=document.getElementById("st1").value;
+        let b=document.getElementById("st2").value;
+        document.getElementById("kq").innerHTML= a-b;
+    }
+    function nhan() {
+        let a=document.getElementById("st1").value;
+        let b=document.getElementById("st2").value;
+        document.getElementById("kq").innerHTML= a*b;
+    }
+    function chia() {
+        let a=document.getElementById("st1").value;
+        let b=document.getElementById("st2").value;
+        document.getElementById("kq").innerHTML= a/b;
+    }
+</script>
+</body>
+</html>
