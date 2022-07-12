@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="display: inline-block">
+<h1 style="text-align: center">BMI</h1>
+<label for="chieuCao">Nhap chieu cao(m): </label>
+<input type="text" name="" id="chieuCao" value="1."><br>
+<label for="canNang">Nhap can nang(kg): </label>
+<input type="text" name="" id="canNang"><br>
+<input type="button" value="Kiem tra"  onclick="banhmi()">
+<p id="ketQua"></p>
+</div>
+<script>
+function banhmi() {
+    let cc = +document.getElementById("chieuCao").value;
+    let cn = +document.getElementById("canNang").value;
+    // bmi = weight / ( height ^ 2 )
+    let bmi =cn/(cc*cc);
+    if (bmi < 18)
+        alert("BMI: "+bmi+" =>>>"+" Gãy");
+    else if (bmi < 25.0)
+        alert("BMI: "+bmi+" =>>>"+" Bình thường");
+    else if (bmi < 30.0)
+        alert("BMI: "+bmi+" =>>>"+" Mập");
+    else
+        alert("BMI: "+bmi+" =>>>"+" Béo vcd");
+}
+</script>
+</body>
+</html>
