@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="https://vietxuangas.com.vn/wp-content/uploads/2017/05/Helium-Latex-Balloons.png" style="width: 10%" id="img" alt="fail!">
+<p>Click button below to move the image to right</p>
+<input type="button" value="Click Me" onclick="moveRight()"/>
+<script>
+    let anh=document.getElementById("img");
+    function init() {
+        anh = document.getElementById('img');
+        anh.style.position="relative";
+        anh.style.right="0px";
+        anh.style.top="0px";
+        anh.style.float="right";
+    }
+    function moveRight() {
+        anh.style.top = parseInt(anh.style.top) + 100 + 'px';
+    }
+    window.onload = init;
+</script>
+</body>
+</html>
