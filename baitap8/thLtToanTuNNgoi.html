@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .bai1{
+      display: inline-block;
+      border: 1px solid;
+    }
+    .bai2{
+        display: inline-block;
+        border: 1px solid;
+    }
+  </style>
+</head>
+<body>
+<div class="bai1">
+    <label for="a">Nhap a:</label><input type="text" id="a"><br>
+    <label for="b">Nhap b:</label><input type="text" id="b"><br>
+    <input type="button" value="Check" onclick="checkB1()">
+</div>
+<div class="bai2">
+    <label for="a">Login :</label><input type="text" id="nv"><br><br>
+    <input type="button" value="Check" onclick="checkB2()">
+</div>
+<script>
+    function checkB1() {
+        let a=+document.getElementById("a").value;
+        let b=+document.getElementById("b").value;
+        alert((a+b<4)?"Below":"Over");
+    }
+    function checkB2() {
+        let nv=document.getElementById("nv").value;
+        alert((nv=='Employee')?'Hello':(nv=='Director')?'Greetings':(nv=='')?'No login':"Who?");
+    }
+</script>
+</body>
+</html>
