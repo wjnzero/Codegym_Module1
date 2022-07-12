@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bai1{
+            border: 1px solid;
+            display: inline-block;
+        }
+        .bai2{
+            border: 1px solid;
+            display: inline-block;
+        }
+        .bai3{
+            border: 1px solid;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="bai1">
+<p>bai1: check trinh duyet</p>
+<input type="text" id="input">
+<input type="button" value="check" onclick="checkBrowser()">
+</div>
+<div class="bai2">
+<p>bai2: check a?</p>
+<input type="text" id="input1" >
+<input type="button" value="check" onclick="checkA()">
+</div>
+<div class="bai3">
+    <p>bai3: check so</p>
+    <input type="text" id="input2" placeholder="0">
+    <input type="button" value="check" onclick="checkSo()">
+</div>
+<script>
+    function checkBrowser() {
+        let trinhDuyet=document.getElementById("input").value;
+        switch (trinhDuyet) {
+            case "Edge":
+                alert("You've got the Edge!");
+                break;
+            case "Chrome":
+            case "Firefox":
+            case "Safari":
+            case "Opera":
+                alert("Okay support het");
+                break;
+            default:alert("We hope that this page looks ok!");
+    }
+    }
+    function checkA() {
+        let a=+document.getElementById("input1").value;
+        switch (a) {
+            case 0:
+                alert(0);
+                break;
+            case 1:
+                alert(1);
+                break;
+            case 2:
+            case 3:
+                alert('2,3');
+                break;
+        }
+    }
+    function checkSo() {
+        let so=document.getElementById("input2").value;
+        switch (true) {
+            case so>0:
+                alert(so+">0");
+                break;
+            case so<0:
+                alert(so+"<0");
+                break;
+            case so==0:
+                alert("0=0");
+                break;
+
+        }
+    }
+</script>
+</body>
+</html>
