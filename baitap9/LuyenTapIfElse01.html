@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .b1{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b2{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b3{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b4{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b5{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b6{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b7{
+            display: inline-block;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<div class="b1">
+  <h3>Bài 1:a%b?</h3>
+    <label for="a">Nhập a: </label><input type="text" placeholder="Nhập a" id="a"><br>
+    <label for="b">Nhập b: </label><input type="text" placeholder="Nhập b" id="b">
+    <input type="button" value="Kiểm tra" onclick="bt1()">
+    <p id="outb1">.</p>
+</div>
+<div class="b2">
+    <h3>Bài 2: Kiểm tra đủ tuổi</h3>
+    <label for="t">Nhập tuổi: </label><input type="text" placeholder="Nhập tuổi" id="t"><br>
+    <input type="button" value="Kiểm tra" onclick="bt2()">
+    <p id="outb2">.</p>
+</div>
+<div class="b3">
+    <h3>Bài 3: Kiểm tra số nhập vào với 0</h3>
+    <label for="s">Nhập số: </label><input type="text" placeholder="Nhập số" id="s"><br>
+    <input type="button" value="Kiểm tra" onclick="bt3()">
+    <p id="outb3">.</p>
+</div>
+<div class="b4">
+    <h3>Bài 4: Tìm max trong 3 số</h3>
+    <label for="st1">Số thứ nhất: </label><input type="text" placeholder="Nhập số" id="st1"><br>
+    <label for="st2">Số thứ hai: </label><input type="text" placeholder="Nhập số" id="st2"><br>
+    <label for="st3">Số thứ ba: </label><input type="text" placeholder="Nhập số" id="st3">
+    <input type="button" value="Kiểm tra" onclick="bt4()">
+    <p id="outb4">.</p>
+</div>
+<div class="b5">
+    <h3>Bài 5: Xếp hạng học lực</h3>
+    <label for="d1">Nhập điểm KT: </label><input type="text" placeholder="điểm KT" id="d1"><br>
+    <label for="d2">Nhập điểm giữa kỳ: </label><input type="text" placeholder="điểm giữa kỳ" id="d2"><br>
+    <label for="d3">Nhập điểm cuối kỳ: </label><input type="text" placeholder="điểm cuối kỳ" id="d3">
+    <input type="button" value="Kiểm tra" onclick="bt5()">
+    <p id="outb5">.</p>
+</div>
+<div class="b6">
+    <h3>Bài 6: Mức hoa hồng nhận khi bán hàng</h3>
+    <label for="ds">Nhập Doanh số: </label><input type="text" placeholder="0" id="ds"> VND<br>
+    <input type="button" value="Kiểm tra" onclick="bt6()">
+    <p id="outb6">.</p>
+</div>
+<div class="b7">
+    <h3>Bài 7: Tính cước đt bàn</h3>
+    <label for="h">Tổng số phút gọi: </label><input type="text" placeholder="0" id="h"><br>
+    <input type="button" value="Kiểm tra" onclick="bt7()">
+    <p id="outb7">.</p>
+</div>
+<script>
+    function bt1() {
+        let a=+document.getElementById("a").value;
+        let b=+document.getElementById("b").value;
+        let b1=(a%b==0)?"a chia hết cho b":"a không chia hết cho b";
+        document.getElementById("outb1").innerText=b1;
+    }
+    function bt2() {
+        let t=+document.getElementById("t").value;
+        let b2=(t>=15)?t+" :Đủ tuổi học lớp 10":t+" :Không đủ tuổi học lớp 10, thiếu "+(15-t)+" tuổi";
+        document.getElementById("outb2").innerText=b2;
+    }
+    function bt3() {
+        let s=+document.getElementById("s").value;
+        if (s>0){
+            document.getElementById("outb3").innerText=s+" >0";
+        }
+        else if (s==0){
+            document.getElementById("outb3").innerText=s+" =0";
+        }
+        else {
+            document.getElementById("outb3").innerText=s+" <0";
+        }
+    }
+    function bt4() {
+        let st1=+document.getElementById("st1").value;
+        let st2=+document.getElementById("st2").value;
+        let st3=+document.getElementById("st3").value;
+        if (st1>st2)
+        {
+            if (st1>st3)
+            {
+                document.getElementById("outb4").innerText="max = "+st1;
+            }
+            else {
+                document.getElementById("outb4").innerText="max = "+st3;
+            }
+        }
+        else if (st2>st3){
+            document.getElementById("outb4").innerText="max = "+st2;
+        }
+        else {
+            document.getElementById("outb4").innerText="max = "+st3;
+        }
+    }
+    function bt5() {
+        let d1=+document.getElementById("d1").value;
+        let d2=+document.getElementById("d2").value;
+        let d3=+document.getElementById("d3").value;
+        let b5=(d1+d2+d3)/3;
+        if (b5<8){
+            if (b5<6.5){
+                if (b5<3.5){
+                    document.getElementById("outb5").innerText="Học lực yếu";
+                }else{
+                    document.getElementById("outb5").innerText="Học lực trung bình";
+                }
+            } else{
+                document.getElementById("outb5").innerText="Học lực khá";
+            }
+
+        }else{
+            document.getElementById("outb5").innerText="Học lực giỏi";
+        }
+    }
+    function bt6() {
+        let ds=+document.getElementById("ds").value;
+        let tien=(ds*6)/100;
+        document.getElementById("outb6").innerHTML=tien+" VND";
+    }
+    function bt7() {
+        let cuoc=+document.getElementById("h").value;
+        let tien1=22000+(cuoc*1000);
+        document.getElementById("outb7").innerHTML=tien1+" VND";
+    }
+</script>
+</body>
+</html>
