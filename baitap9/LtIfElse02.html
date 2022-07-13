@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .b1{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b2{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b3{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b4{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b5{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b6{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b7{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b8{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b9{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b10{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b11{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b12{
+            display: inline-block;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<div class="b1">
+    <h3>Bài 1: Chuyển từ độ C sang độ F</h3>
+    <label for="in1">Nhập độ C: </label><input type="text" id="in1"> °C<br>
+    <input type="button" value="Chạy" onclick="b1()">
+    <p id="kqb1">.</p>
+</div>
+<div class="b2">
+    <h3>Bài 2: Chuyển từ mét sang feet</h3>
+    <label for="in2">Nhập Mét: </label><input type="text" id="in2"> m<br>
+    <input type="button" value="Chạy" onclick="b2()">
+    <p id="kqb2">.</p>
+</div>
+<div class="b3">
+    <h3>Bài 3: Tính diện tích hình vuông khi biết cạnh a</h3>
+    <label for="in3">Nhập cạnh a: </label><input type="text" id="in3"><br>
+    <input type="button" value="Chạy" onclick="b3()">
+    <p id="kqb3">.</p>
+</div>
+<div class="b4">
+    <h3>Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b</h3>
+    <label for="in4">Nhập cạnh a: </label><input type="text" id="in4"><br>
+    <label for="in4_1">Nhập cạnh b: </label><input type="text" id="in4_1"><br>
+    <input type="button" value="Chạy" onclick="b4()">
+    <p id="kqb4">.</p>
+</div>
+<div class="b5">
+    <h3>Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b</h3>
+    <label for="in5">Nhập cạnh kề a: </label><input type="text" id="in5"><br>
+    <label for="in5_1">Nhập cạnh kề b: </label><input type="text" id="in5_1"><br>
+    <input type="button" value="Chạy" onclick="b5()">
+    <p id="kqb5">.</p>
+</div>
+<div class="b6">
+    <h3>Bài 6: Giải phương trình bậc 1: ax + b = 0</h3>
+    <label for="in6">Nhập a: </label><input type="text" id="in6"><br>
+    <label for="in6_1">Nhập b: </label><input type="text" id="in6_1"><br>
+    <input type="button" value="Chạy" onclick="b6()">
+    <p id="kqb6">.</p>
+</div>
+<div class="b7">
+    <h3>Bài 7: Giải phương trình bậc 2: ax<sup>2</sup>+bx+c=0</h3>
+    <label for="in7">Nhập a: </label><input type="text" id="in7"><br>
+    <label for="in7_1">Nhập b: </label><input type="text" id="in7_1"><br>
+    <label for="in7_2">Nhập c: </label><input type="text" id="in7_2"><br>
+    <input type="button" value="Chạy" onclick="b7()">
+    <p id="kqb7">.</p>
+</div>
+<div class="b8">
+    <h3>Bài 8: Kiểm tra người đủ tuổi không</h3>
+    <label for="in8">Nhập Tuổi: </label><input type="text" id="in8"><br>
+    <input type="button" value="Chạy" onclick="b8()">
+    <p id="kqb8">.</p>
+</div>
+<div class="b9">
+    <h3>Bài 9: Kiểm tra a,b,c phải cạnh tam giác không</h3>
+    <label for="in9">Nhập a: </label><input type="text" id="in9"><br>
+    <label for="in9_1">Nhập b: </label><input type="text" id="in9_1"><br>
+    <label for="in9_2">Nhập c: </label><input type="text" id="in9_2"><br>
+    <input type="button" value="Chạy" onclick="b9()">
+    <p id="kqb9">.</p>
+</div>
+<div class="b10">
+    <h3>Bài 10: Tính gian tiền điện</h3>
+    <label for="in10">Nhập Số kWh sử dụng: </label><input type="text" id="in10"><br>
+    <input type="button" value="Chạy" onclick="b10()">
+    <p id="kqb10">.</p>
+</div>
+<div class="b11">
+    <h3>Bài 11: Tính thuế thu nhập cá nhân</h3>
+    <label for="in11">Nhập Thu Nhập: </label><input type="text" id="in11"> triệu<br>
+    <input type="button" value="Chạy" onclick="b11()">
+    <p id="kqb11">.</p>
+</div>
+<div class="b12">
+    <h3>Bài 12: Tính tiền phải trả khi vay online</h3>
+    <label for="in12">Số tiền vay: </label><input type="text" id="in12"> VND<br>
+    <label for="in12_1">Lãi xuất: </label><input type="text" id="in12_1"> %<br>
+    <label for="in12_2">thời hạn: </label><input type="text" id="in12_2"> tháng<br>
+    <input type="button" value="Chạy" onclick="b12()">
+    <p id="kqb12">.</p>
+</div>
+<script>
+    function b1() {
+        let doC=+document.getElementById("in1").value;
+        document.getElementById("kqb1").innerText=doC*9/5+32+" °F";
+
+    }
+    function b2() {
+        let met=+document.getElementById("in2").value;
+        document.getElementById("kqb2").innerText=met*3.2808+" feet";
+    }
+    function b3() {
+        let canhA=+document.getElementById("in3").value;
+        document.getElementById("kqb3").innerText="S= "+canhA*canhA;
+    }
+    function b4() {
+        let aBai4=+document.getElementById("in4").value;
+        let bBai4=+document.getElementById("in4_1").value;
+        document.getElementById("kqb4").innerText="S= "+aBai4*bBai4;
+    }
+    function b5() {
+        let aBai5=+document.getElementById("in5").value;
+        let bBai5=+document.getElementById("in5_1").value;
+        document.getElementById("kqb5").innerText="S= "+1/2*aBai5*bBai5;
+    }
+    function b6() {
+        let aBai6=+document.getElementById("in6").value;
+        let bBai6=+document.getElementById("in6_1").value;
+        if (aBai6==0&&bBai6==0){
+            document.getElementById("kqb6").innerText="PT vô số nghiệm ";
+        }
+        else if (aBai6==0&&bBai6!=0){
+            document.getElementById("kqb6").innerText="PT vô nghiệm ";
+        }
+        else {
+            document.getElementById("kqb6").innerText="PT có nghiệm duy nhất x= "+-bBai6/aBai6;
+        }
+    }
+    function b7() {
+        let aBai7=+document.getElementById("in7").value;
+        let bBai7=+document.getElementById("in7_1").value;
+        let cBai7=+document.getElementById("in7_2").value;
+        let deltaBai7=(bBai7*bBai7)-4*aBai7*cBai7;
+        if (aBai7&&bBai7&&cBai7==0){
+            document.getElementById("kqb7").innerText="PT vô số nghiệm ";
+        }
+        else if (deltaBai7<0){
+            document.getElementById("kqb7").innerText="PT vô nghiệm ";
+        }
+        else if (deltaBai7==0){
+            document.getElementById("kqb7").innerText="PT có nghiệm kép x1=x2= "+-bBai7/2*aBai7;
+        }
+        else if (deltaBai7>0){
+            let nghiemx1=(-bBai7+Math.sqrt(deltaBai7))/(2*aBai7);
+            let nghiemx2=(-bBai7-Math.sqrt(deltaBai7))/(2*aBai7);
+            document.getElementById("kqb7").innerHTML="PT có 2 nghiệm phân biệt:"+"<br>"+"x1= "+nghiemx1+"<br>"+"x2= "+nghiemx2;
+        }
+    }
+    function b8() {
+        let tuoiNguoi=+document.getElementById("in8").value;
+        if (tuoiNguoi<=120&&tuoiNguoi>0){
+            document.getElementById("kqb8").innerText=tuoiNguoi+" là tuổi của một người";
+        }
+        else {document.getElementById("kqb8").innerText=tuoiNguoi+" không là tuổi của một người";}
+    }
+    function b9() {
+        let aBai9=+document.getElementById("in9").value;
+        let bBai9=+document.getElementById("in9_1").value;
+        let cBai9=+document.getElementById("in9_2").value;
+        if (aBai9>0&&bBai9>0&&cBai9>0){
+            if (aBai9+bBai9>cBai9){
+                if (bBai9+cBai9>aBai9){
+                    if (aBai9+cBai9>bBai9){
+                        document.getElementById("kqb9").innerText=" a,b,c là cạnh của 1 tam giác";
+                    }
+                }
+            }
+        }else {
+            document.getElementById("kqb9").innerText=" a,b,c không là cạnh của 1 tam giác";
+        }
+    }
+    function b10() {
+        let soKwh = +document.getElementById("in10").value;
+        let tiendienbai10;
+        // TT	Số kWh sử dụng	Giá bán điện (đồng/kWh)
+        // Bậc 1	Cho kWh từ 0 - 50	1.678
+        // Bậc 2	Cho kWh từ 51 - 100	1.734
+        // Bậc 3	Cho kWh từ 101 - 200	2.014
+        // Bậc 4	Cho kWh từ 201 - 300	2.536
+        // Bậc 5	Cho kWh từ 301 - 400	2.834
+        // Bậc 6	Cho kWh từ 401 trở lên	2.927
+        if (soKwh < 401) {
+            if (soKwh < 301) {
+                if (soKwh < 201) {
+                    if (soKwh < 101) {
+                        if (soKwh < 51) {
+                            tiendienbai10 = soKwh * 1.678;
+                        }
+                    } else {
+                        tiendienbai10 = (50 * 1.678) + ((soKwh - 50) * 1.734)
+                    }
+                } else {
+                    tiendienbai10 = (50 * 1.678) + (50 * 1.734) + ((soKwh - 100) * 2.014)
+                }
+            } else {
+                tiendienbai10 = (50 * 1.678) + (50 * 1.734) + (100 * 2.014) + ((soKwh - 100) * 2.536)
+            }
+        } else {
+            tiendienbai10 = (50 * 1.678) + (50 * 1.734) + (100 * 2.014) + (100 * 2.536) + (100 * 2.834) + ((soKwh - 400) * 2.927);
+        }
+        document.getElementById("kqb10").innerText="Dùng "+soKwh+" trả "+tiendienbai10+" nghìn đồng";
+    }
+    function b11() {
+        let thuNhap = +document.getElementById("in11").value;
+        let thue;
+        if (thuNhap<80){
+            if (thuNhap<52){
+                if (thuNhap<32){
+                    if (thuNhap<18){
+                        if (thuNhap<10){
+                            if (thuNhap<5){
+                            thue=thuNhap/100*10;
+                            }
+                        }else{thue=thuNhap/100*15;}
+                    }else{thue=thuNhap/100*20;}
+                }else{thue=thuNhap/100*25;}
+            }else{thue=thuNhap/100*30;}
+        }else{thue=thuNhap/100*35;}
+        document.getElementById("kqb11").innerText="Phải chịu "+thue+" triệu tiền thuế";
+    }
+    function b12() {
+        let tienVay=+document.getElementById("in12").value;
+        let laiXuat=+document.getElementById("in12_1").value;
+        let thoiHan=+document.getElementById("in12_2").value;
+        document.getElementById("kqb12").innerText="BÙNG";
+    }
+</script>
+</body>
+</html>
