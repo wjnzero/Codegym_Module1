@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="bt1"></p>
+<script>
+    let text="";
+    for (let i = 0; i < 5; i++) {
+        text+="The number is "+i+"<br>";
+    }
+    document.getElementById("bt1").innerHTML=text;
+    let inPut = parseInt(prompt("nhap n>0: "));
+    let tong=0;
+    for (let i = 0; i <= inPut; i++) {
+        tong+=i;
+    }
+    alert(tong);
+</script>
+</body>
+</html>
