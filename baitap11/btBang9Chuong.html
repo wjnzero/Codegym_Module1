@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<h1>Bảng Cửu Long</h1>
+<p id="tro"></p>
+<script>
+    let bang= "<table border='1' width='1000' cellSpacing='2' cellPadding='2'>";
+    let i,j=0;
+    let hihi=2;
+    for (i = 1; i <= 9; i++) {
+        bang+="<tr>";
+        for (j = 1; j <= 8; j++) {
+            bang+="<td>"+hihi+"x"+i+"="+eval(hihi*i)+"</td>";
+            hihi++;
+        }
+        bang+="<tr>";
+        hihi=2;
+    }
+    bang+="</table>";
+    document.getElementById("tro").innerHTML=bang;
+</script>
+</body>
+</html>
