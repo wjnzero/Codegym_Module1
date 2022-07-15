@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hug</title>
+    <style>
+        .b1{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b2{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b3{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b6{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b7{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b8{
+            display: inline-block;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<div class="b1">
+    <h3>Bài 1: Đếm</h3>
+    <input type="button" value="Đếm 1-100" onclick="b1()">
+    <p id="kqb1">.</p>
+</div>
+<div class="b2">
+    <h3>Bài 2: kt nhiệt độ</h3>
+    <input type="button" value="Bấm để nhập" onclick="b2()">
+    <p id="kqb2">.</p>
+</div>
+<div class="b3">
+    <h3>Bài 3+4+5: 20 số Fibonacci+chia hết 5+tổng</h3>
+    <input type="button" value="Chạy" onclick="b3()">
+    <p id="kqb3">.</p>
+</div>
+<div class="b6">
+    <h3>Bài 6: tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên</h3>
+    <input type="button" value="Chạy" onclick="b6()">
+    <p id="kqb6">.</p>
+</div>
+<div class="b7">
+    <h3>Bài 7: chia 3=Fizz5 Buzz 3&5=FizzBuzz</h3>
+    <input type="button" value="Chạy" onclick="b7()">
+    <p id="kqb7">.</p>
+</div>
+<div class="b8">
+    <h3>Bài 8: Đoán đề</h3>
+    <input type="button" value="Chơi" onclick="b8()">
+    <p id="kqb8">.</p>
+</div>
+<script>
+    function b1() {
+        for (let i = 1; i <=100 ; i++) {
+            document.getElementById("kqb1").innerHTML+=i+" ";
+            if (i==99){
+                alert("đã hoàn thành");
+            }
+        }
+    }
+    function b2() {
+        let nhiet=19;
+        // for (let i = 0; i < 9999; i++) {
+        //      nhiet =+prompt("Nhập nhiệt độ hiện tại");
+        //      if (nhiet>100){
+        //          alert("Giảm nhiệt đê");
+        //      }
+        //      else if(nhiet<20){
+        //          alert("Tăng nhiệt")
+        //      }
+        //      else {break}
+        // }
+        while (nhiet>100||nhiet<20){
+            nhiet =+prompt("Nhập nhiệt độ hiện tại");
+            if (nhiet>100){
+                alert("giảm nhiệt");
+            }else if (nhiet<20){
+                alert("tăng nhiệt");
+            }
+        }
+    }
+    function b3() {
+        let kq="0,1";
+        let sum=0;
+        let a=0;
+        let b=1;
+        let chiaHet;
+        let tong=1;
+        for (let i = 0; i < 20; i++) {
+            sum=a+b;
+            a=b;
+            b=sum;
+            kq+=","+sum;
+            tong+="+"+sum;
+            if (sum%5==0){
+                chiaHet="Số "+sum+" vị trí thứ "+i+" là số đầu tiên chia hết cho 5."
+            }
+        }
+
+        document.getElementById("kqb3").innerHTML=kq+"<br>"+ chiaHet+"<br>"+"Tổng 20 số fibo đầu: "+eval(tong);
+    }
+    function b6() {
+        let temp=0;
+        let tong;
+        for (let i = 0; i < 30; i++) {
+            if (i%7==0){
+                temp+=i;
+            }
+        }
+        document.getElementById("kqb6").innerHTML=temp;
+    }
+    function b7() {
+        let fB="";
+        for (let i = 1; i <=100 ; i++) {
+            if (i%3==0&&i%5==0){
+                fB+="FizzBuzz"+"<br>";
+            }
+            else if (i%3==0){
+                fB+="Fizz"+"<br>";
+            }
+            else if (i%5==0){
+                fB+="Buzz"+"<br>";
+            }
+            else {
+                fB+=i+"<br>";
+            }
+        }
+        document.getElementById("kqb7").innerHTML=fB;
+    }
+    function b8() {
+        let phamVi=+prompt("Số lớn nhất trong phạm vi đề (so với 0)");
+        let soDe=Math.floor(Math.random()*phamVi);
+        let lichSu="";
+        for (let i = 0; i < 3; i++) {
+            let gt=+prompt("Nhập số đoán");
+            if (gt==soDe){
+                alert("số bạn đoán: "+gt+"\n"+"Đề về: "+soDe+"\n"+"->>trúng đề");
+                break;
+            }
+            else if (gt>soDe){
+                alert("Đề về bé hơn!");
+            }
+            else {
+                alert("Đề về Lớn hơn!");
+            }
+            lichSu+=" "+gt;
+        }
+        alert("số bạn đã đoán: "+lichSu+"\n"+"Đề về: "+soDe+"\n"+"->>tạch đề");
+    }
+
+</script>
+</body>
+</html>
