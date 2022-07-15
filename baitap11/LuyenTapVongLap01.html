@@ -96,20 +96,22 @@
         let sum=0;
         let a=0;
         let b=1;
-        let chiaHet;
+        let chiaHet=0;
         let tong=1;
+        let temp=[];
+        let c=0;
         for (let i = 0; i < 20; i++) {
             sum=a+b;
             a=b;
             b=sum;
             kq+=","+sum;
             tong+="+"+sum;
-            if (sum%5==0){
-                chiaHet="Số "+sum+" vị trí thứ "+i+" là số đầu tiên chia hết cho 5."
+            if (b%5==0){
+                temp[c]="Số "+b+" là số thứ "+(c+1)+" ngoài 0 chia hết cho 5.";
+                c++;
             }
         }
-
-        document.getElementById("kqb3").innerHTML=kq+"<br>"+ chiaHet+"<br>"+"Tổng 20 số fibo đầu: "+eval(tong);
+        document.getElementById("kqb3").innerHTML=kq+"<br>"+ temp[0]+"<br>"+"Tổng 20 số fibo đầu: "+eval(tong);
     }
     function b6() {
         let temp=0;
