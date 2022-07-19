@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .b1{
+      display: inline-block;
+      border: 1px solid;
+    }
+  </style>
+</head>
+<body>
+<div class="b1">
+    <h3>Bài 1: Mảng 02</h3>
+    <input type="button" value="In pt từ mảng có sẵn" onclick="b1()">
+    <p id="kqb1">.</p>
+</div>
+<script>
+    function b1() {
+        let b='row0 \n';
+        let a = [
+            [1, 2, 1, 24],
+            [8, 11, 9, 4],
+            [7, 0, 7, 27],
+            [7, 4, 28, 14],
+            [3, 10, 26, 7]
+        ];
+        // "row 0"
+        // " 1"
+        // " 2"
+        // " 1"
+        // " 24"
+        // "row 1"
+        for (let i = 0; i <a.length ; i++) {
+            for (let j = 0; j <a[i].length ; j++) {
+                b+=a[i][j]+" ";
+            }
+            b+='\n'+'row'+(i+1)+'\n';
+        }
+        alert(b);
+    }
+</script>
+</body>
+</html>
