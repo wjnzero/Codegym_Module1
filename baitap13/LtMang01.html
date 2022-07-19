@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .b1{
+            display: inline-block;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<div class="b1">
+    <h3>Bài 1->9: Mảng</h3>
+    <input type="button" value="Chạy để hiện thêm bài" onclick="b1()">
+    <p id="kqb1">.</p>
+</div>
+<script>
+    let arr1= [0,9,-1,8,2,-7,3,-6,44,15];
+    let arr2= ["H","ù","n","g"," ",1,5,0,3,98];
+    function b1() {
+        let temp="";
+        let dem=0;
+        let max=0;
+        let viTri=0;
+        let tb=0;
+        let demAm=0;
+        let soAm="";
+        for (let i = 0; i < arr1.length; i++) {
+            tb+=arr1[i];
+            if (arr1[i]>max){
+                max=arr1[i];
+                viTri=i;
+            }
+            if (arr1[i]>=10){
+                temp+=arr1[i]+" ";
+                dem++;
+            }
+            if (arr1[i]<0){
+                demAm++;
+                soAm+=arr1[i]+"";
+            }
+        }
+        document.getElementById("kqb1").innerHTML="Mảng: "+arr1+"<br>"+"Có "+dem+" số nguyên lớn hơn hoặc bằng 10, là: "+temp+"<br>"+"Max = "+max+" vị trí thứ "+viTri+"<br>"+"Giá trị trung bình: "+(tb/arr1.length+"<br>"+"Có "+demAm+" số nguyên âm là "+soAm+"<br>"+"<input type=\"button\" value=\"B4 :Đảo&In\" onclick=\"fc(arr1);\">"+"<br>"
+            +"<input type=\"button\" value=\"B6+7 :Nhập & Tìm V & Xóa V\" onclick=\"fc1(arr1);\">"
+            +"<br>"+"<input type=\"button\" value=\"B8 : Xếp giảm dần\" onclick=\"fc2(arr1);\">"
+            +"<br>"+"<input type=\"button\" value=\"B9 : Nối mảng\" onclick=\"fc3(arr1);\">")+"Mảng B= [\"H\",\"ù\",\"n\",\"g\",\" \",1,5,0,3,98];";
+    }
+    function fc(ar) {
+        let tg;
+        for (let i = 0; i < ar.length/2; i++) {
+            tg=ar[i];
+            ar[i]=ar[ar.length-(i+1)];
+            ar[ar.length-(i+1)]=tg;
+        }
+        alert(ar);
+    }
+    function fc1(ar) {
+        let v=+prompt("Nhập V");
+        let dk;
+        for (let cc of ar) {
+            if (cc==v){
+                dk=true;
+        }
+        }
+        if (dk){
+            alert("V is in the array");
+            let xoaV=confirm("Vậy có muốn xóa V khỏi mảng không?");
+            if (xoaV){
+                for (let i = 0; i < ar.length; i++) {
+                    if (v==ar[i]){
+                        for (let j = i; j < ar.length; j++) {
+                            ar[j]=ar[j+1];
+                        }
+                        ar[ar.length-1]=0;
+                    }
+                }
+            }
+            alert("Mảng hiện tại: "+ar);
+        }
+        else {alert("V is not in the array");}
+    }
+    function fc2(ar) {
+        let temp;
+        for (let i = 0; i < ar.length; i++) {
+            for (let j = i+1; j < ar.length; j++) {
+                if (ar[i]<ar[j]){
+                    temp=ar[i];
+                    ar[i]=ar[j];
+                    ar[j]=temp;
+                }
+            }
+        }
+        alert("Mảng sau khi xếp giảm: "+ar);
+    }
+    function fc3(arc) {
+        arc=arr1.concat(arr2);
+        alert("Mảng C : "+arc)
+    }
+</script>
+</body>
+</html>
