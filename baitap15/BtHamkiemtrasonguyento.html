@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let inPut = parseInt(prompt("Nhập số cần check "));
+  nt()
+
+  function nt(){
+    let count = 0;
+    let isPrime = false;
+    if (inPut === 0) {
+      alert(inPut + " không là số nguyên tố")
+    } else {
+      for ( let i = 1; i <= inPut; i++) {
+        if(inPut % i === 0) {
+          count += 1;
+        }
+      }
+      if (count ===2 ) {
+        isPrime = true
+      }
+      if (isPrime) {
+        alert(inPut + " là số nguyên tố")
+      } else {
+        alert (inPut + " không là số nguyên tố")
+      }
+    }
+  }
+</script>
+</body>
+</html>
