@@ -1,10 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .b1{
+      display: inline-block;
+      border: 1px solid;
+    }
+    .b2{
+      display: inline-block;
+      border: 1px solid;
+    }
+    .b3{
+      display: inline-block;
+      border: 1px solid;
+    }
+    .b4{
+      display: inline-block;
+      border: 1px solid;
+    }
+    .b5{
+      display: inline-block;
+      border: 1px solid;
+    }
+    .b6{
+      display: inline-block;
+      border: 1px solid;
+    }
+  </style>
 </head>
 <body>
-$END$
+<div class="b1">
+  <h3>Bài 1:  In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau</h3>
+  <input type="button" value="in" onclick="b1()">
+  <p id="kqb1">.</p>
+</div>
+<div class="b2">
+  <h3>Bài 2: kt nhiệt độ</h3>
+  <input type="button" value="Bấm để nhập" onclick="b2()">
+  <p id="kqb2">.</p>
+</div>
+<div class="b3">
+  <h3>Bài 3:</h3>
+  <input type="button" value="In" onclick="b3()">
+  <p id="kqb3">.</p>
+</div>
+<div class="b4">
+  <h3>Bài 6: tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên</h3>
+  <input type="button" value="Chạy" onclick="b6()">
+  <p id="kqb4">.</p>
+</div>
+<div class="b5">
+  <h3>Bài 7: chia 3=Fizz5 Buzz 3&5=FizzBuzz</h3>
+  <input type="button" value="Chạy" onclick="b7()">
+  <p id="kqb5">.</p>
+</div>
+<div class="b6">
+  <h3>Bài 8: Đoán đề</h3>
+  <input type="button" value="Chơi" onclick="b8()">
+  <p id="kqb6">.</p>
+</div>
+<script>
+  function b1() {
+    let tg;
+    var a=0;
+    tg = "<table>"
+    for (i = 0; i < 5; i++) {
+      tg = tg + "<tr>";
+      for (j = 0; j < 5; j++) {
+        if ((i==0&&(j!=4))||(i==1&&(j!=3&&j!=4))||(i==2&&(j!=2&&j!=3&&j!=4))||(i==3&&(j!=1&&j!=2&&j!=3&&j!=4))){
+          tg = tg + "<td>" +" "+ "</td>";
+        }
+        else {tg = tg + "<td>" +"*"+ "</td>";}
+      }
+      tg = tg + "</tr>";
+    }
+    tg = tg + "</table>";
+    document.getElementById("kqb1").innerHTML=tg;
+  }
+  function b2() {
+
+  }
+  function b3() {
+
+  }
+  function b4() {
+
+  }
+  function b5() {
+
+  }
+  function b6() {
+
+  }
+</script>
 </body>
 </html>
