@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Tv {
+        currentChanel;
+        currentVolume;
+        status;
+        constructor(cc,cv,s) {
+            this.currentChanel=cc;
+            this.currentVolume=cv;
+            this.status=s;
+        }
+        setChanel(chanel){
+            this.currentChanel=chanel;
+        }
+        getChanel(){
+            return this.currentChanel;
+        }
+        On(){
+            this.currentChanel=7;
+            this.status=true;
+        }
+        Off(){
+            this.currentChanel=null;
+            this.status=false;
+        }
+        volume(){
+            return this.currentVolume;
+        }
+    }
+    class Remote {
+        tvNumber;
+        constructor(code) {
+            this.tvNumber=code;
+        }
+        swapChanel(chanel){
+            this.tvNumber.currentChanel=chanel;
+        }
+        volumeUp(volume){
+            this.tvNumber.currentVolume+=volume;
+        }
+        turnOnTv(){
+            this.tvNumber.status=true;
+            this.tvNumber.currentChanel=7;
+            this.tvNumber.currentVolume=15;
+        }
+        turnOffTv(){
+            this.tvNumber.status=false;
+        }
+    }
+    let denTrang =new Tv(null,null,false);
+    let dieuKhienHetPin=new Remote(denTrang);
+</script>
+</body>
+</html>
