@@ -1,10 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .b1{
+            display: inline-block;
+            border: 1px solid;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="b1">
+    <h3>Minitest2: arr=[0,9,1,8,2,7,3,6,4,5,5]</h3>
+    <input type="button" value="Chạy" onclick="main()">
+    <p id="kq">.</p>
+</div>
 </body>
+<script>
+    let arr=[0,9,1,8,2,7,3,6,4,5,5];
+    function b1(){
+        let demChan=0
+        for(let i =1;i <arr.length;i++ ){
+            if(arr[i]%2===0){
+                demChan++;
+            }
+        }
+        return demChan;
+    }
+    function b2(a){
+        a=+prompt("Nhap a");
+        let demPT=0;
+        for(let i = 0; i<arr.length; i++){
+            if (arr[i]===a){
+                demPT++;
+            }
+        }
+        alert("co "+demPT+" phan tu "+a+" trong mang da cho")
+    }
+    function b3(){
+        let tong3=0;
+        for(let i = 0; i<arr.length; i++){
+            if (checkNT(arr[i])===true){
+                tong3+=arr[i];
+            }
+        }
+        return tong3;
+    }
+    function b4(){
+        let tong4=0;
+        for(let i = 0; i<500; i++){
+            if (checkNT(i)===true){
+                tong4+=i;
+            }
+        }
+        return tong4;
+    }
+    function checkNT(n){
+        if(n<=1){
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    function main() {
+        document.getElementById("kq").innerHTML="So Luong so chan trong mang: "+b1()
+        +"<br>"+"Tong cac so nguyen to trong mang: "+b3()
+        +"<br>"+ "Tong cac so nguyen to <500: "+b4()
+        +"<br>"+"<input type=\"button\" value=\"B2 : Nhap a\" onclick=\"b2();\">";
+    }
+</script>
 </html>
