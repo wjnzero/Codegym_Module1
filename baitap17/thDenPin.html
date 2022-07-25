@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DenPin</title>
+</head>
+<body>
+<script>
+    class Battery {
+        energy;
+        setEnergy(a){
+            this.energy=a;
+        }
+        getEnergy(){
+            alert(this.energy);
+            return this.energy;
+        }
+        decreaseEnergy(){
+            if (this.energy>0){
+                return this.energy--;
+            }
+        }
+    }
+    class FlashLamp{
+        status;
+        battery;
+        setBattery(energy){
+            this.battery=energy;
+        }
+        getBatteryInfo(){
+            alert(this.battery);
+            return this.battery;
+        }
+        light(){
+            if (this.status){
+                alert("light");
+            }
+            else {
+                alert("Dark");
+            }
+            pin.decreaseEnergy();
+        }
+        turnOn(){
+            if (this.battery>0){
+                this.status=true;
+            }
+            else {
+                alert("no pin");
+            }
+        }
+        turnOff(){
+            this.status=false;
+        }
+    }
+    let pin=new Battery();
+    pin.setEnergy(10);
+    let denPin= new FlashLamp();
+    denPin.setBattery(pin.getEnergy());
+    denPin.getBatteryInfo();
+    denPin.turnOn();
+    denPin.light();
+    denPin.turnOff();
+    denPin.setBattery(pin.getEnergy());
+    denPin.getBatteryInfo();
+</script>
+</body>
+</html>
