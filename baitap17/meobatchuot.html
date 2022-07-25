@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>meo va chuot</title>
+</head>
+<body>
+
+</body>
+<script>
+    class rat {
+        nameMouse;
+        weightMouse;
+        speedMouse;
+        status=true;
+        constructor(name,weight,speed) {
+            this.nameMouse=name;
+            this.weightMouse=weight;
+            this.speedMouse=speed;
+        }
+        getStatus() {
+            if (this.status) {
+                alert("Chuột sống");
+            } else {
+                alert("Chuột chết");
+            }
+        }
+        mouseSounding(){
+            alert("chít chít");
+        }
+        die(){
+            return this.status=false;
+        }
+        alive(){
+            return this.status=true;
+        }
+    }
+    class cat {
+        name;
+        weight;
+        maxSpeed;
+        mouse;
+        constructor(name,weight,maxSpeed,mouse) {
+            this.name=name;
+            this.weight=weight;
+            this.maxSpeed=maxSpeed;
+            this.mouse=mouse;
+        }
+        sounding(){
+            alert("meo meo");
+        }
+        catchMouse(){
+            if (this.maxSpeed>this.mouse.speedMouse){
+                alert("Mèo bắt được chuột");
+            }
+            else {
+                alert("Chuột chạy mất");
+            }
+        }
+        eatMouse(){
+            if (this.mouse.status){
+                this.weight+=this.mouse.weightMouse;
+                this.mouse.status=false;
+                alert("Chuột bị mèo ăn");
+            }
+        }
+    }
+    let chuot=new rat("dong",10,10);
+    let meo=new cat("mun",30,20,chuot);
+</script>
+</html>
