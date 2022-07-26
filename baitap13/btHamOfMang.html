@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .b1{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b2{
+            display: inline-block;
+            border: 1px solid;
+        }
+        .b3{
+            display: inline-block;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<div class="b1">
+    <h3>Bài 1:</h3>
+    <input type="button" value="nối tất cả các phần tử trong một mảng chuỗi lại với nhau" onclick="b1()">
+    <p id="kqb1">.</p>
+</div>
+<div class="b2">
+    <h3>Bài 2:</h3>
+    <input type="button" value="nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn" onclick="b2()">
+    <p id="kqb2">.</p>
+</div>
+<div class="b3">
+    <h3>Bài 3:</h3>
+    <input type="button" value="chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa" onclick="b3()">
+    <p id="kqb3">.</p>
+</div>
+</body>
+<script>
+    function b1() {
+        let myColor = ["Red", "Green", "White", "Black"];
+        document.getElementById("kqb1").innerHTML=myColor.join();
+
+    }
+    function b2() {
+        let num = window.prompt();
+        let str = num.toString();
+        let result = [str[0]];
+
+        for (let x = 1; x < str.length; x++) {
+            if (str[x - 1] % 2 === 0 && str[x] % 2 === 0) {
+                result.push('-', str[x]);
+            } else {
+                result.push(str[x]);
+            }
+        }
+        document.getElementById("kqb2").innerHTML=result.join('');
+
+    }
+    function b3() {
+        let str = 'hung dep trai DHCKUD';
+        const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        const result = [];
+
+        for(let x=0; x<str.length; x++)
+        {
+            if(UPPER.includes(str[x]))
+            {
+                result.push(str[x].toLowerCase());
+            }
+            else if(LOWER.includes(str[x]))
+            {
+                result.push(str[x].toUpperCase());
+            }
+            else
+            {
+                result.push(str[x]);
+            }
+        }
+        document.getElementById("kqb3").innerHTML=result.join('');
+
+    }
+</script>
+</html>
