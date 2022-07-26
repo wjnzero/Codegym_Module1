@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cell{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="banCo">
+<!--    <div id="cell02" onclick="play(0,2)" class="cell00" style="position: absolute; width: 40px; height:40px; left:0px; top:0px; border: 1px solid;"></div>-->
+<!--        <img src="https://media.istockphoto.com/vectors/dirty-grunge-hand-drawn-with-brush-strokes-cross-x-vector-isolated-vector-id1201202836?k=20&m=1201202836&s=612x612&w=0&h=0ib7KQaJXonfKN0-tGNaMUIw2Hre9sJjd4hTsc3QwBc=" alt="x" width="40" height="40"></div>-->
+<!--    <div id="cell-0-2" onclick="play(0,2)" class="cell" style="position: absolute; width: 40px; height:40px; left:41px; top:0px;border: 1px solid;"></div>-->
+<!--    <div id="cell-0-2" onclick="play(0,2)" class="cell" style="position: absolute; width: 40px; height:40px; left:82px; top:0px;border: 1px solid;"></div>-->
+<!--    <div id="cell-0-2" onclick="play(0,2)" class="cell" style="position: absolute; width: 40px; height:40px; left:0px; top:41px;border: 1px solid;"></div>-->
+</div>
+</body>
+<script>
+    var X='<img src="https://media.istockphoto.com/vectors/dirty-grunge-hand-drawn-with-brush-strokes-cross-x-vector-isolated-vector-id1201202836?k=20&m=1201202836&s=612x612&w=0&h=0ib7KQaJXonfKN0-tGNaMUIw2Hre9sJjd4hTsc3QwBc=" alt="x" width="30" height="30">';
+    var o='<img src="https://t4.ftcdn.net/jpg/01/42/10/19/360_F_142101942_PYuQMMpJ9cdewEOU5UOlD4allFOforG3.jpg" alt="o" width="30" height="30">';
+    class game {
+        dong;
+        cot;
+        width;
+        height;
+        constructor(dong,cot,width,height) {
+            this.dong=dong
+            this.cot=cot;
+            this.width=width;
+            this.height=height;
+        }
+        creatArea(){
+            let top=0;
+            let left=0;
+            let area="";
+            const a=this.width+1;
+            const b=this.height+1;
+            for (let i = 0; i < this.cot; i++) {
+                for (let j = 0; j < this.dong; j++) {
+                    area+='<div id="cell'+i+j+'" onclick="play('+i+','+j+')" class="cell" style="position: absolute; width: '+
+                        this.width+'px; height:'+
+                        this.height+'px; left:'+
+                        left+'px; top:'+
+                        top+'px; border: '+1+'px solid;"></div>';
+                    left+=a;
+                }
+                left=0;
+                top+=b;
+            }
+            document.getElementById("banCo").innerHTML=area;
+        }
+    }
+    class mouse {
+        xCheck;
+        oCheck;
+        Game;
+        constructor(x,o,g) {
+            this.xCheck=x;
+            this.oCheck=o;
+            this.Game=g;
+        }
+        play(x,y){
+             // document.getElementById("cell"+x+y).innerText="a";
+            // document.getElementById("cell"+x+y).innerText="this.Game.status";
+            // document.getElementById("cell"+x+y).innerHTML=;
+            alert("");
+        }
+    }
+    function play(x,y) {
+       // let temp;
+        if(!document.getElementById("cell"+x+y).value&&a%2===0) {
+            document.getElementById("cell" + x + y).innerHTML = X;
+            a++;
+        }
+        else {
+            document.getElementById("cell" + x + y).innerHTML = o;
+            a++;
+    }
+    }
+    let a=0;
+    let hung=new game(20,20,30,30);
+    let chuot=new mouse(0,0,hung);
+     hung.creatArea();
+</script>
+</html>
