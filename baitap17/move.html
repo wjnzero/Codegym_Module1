@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas width="1200px" height="600px" id="canvas" style="border: 1px solid"></canvas>
+<br>
+<button onclick="start()">Start</button>
+<button onclick="stop()">Stop</button>
+</body>
+<script>
+    class Rectangle {
+        width
+        height
+
+        constructor(width, height) {
+            this.width = width
+            this.height = height
+        }
+
+        drawOnScreen(x, y, color) {
+            let ctx = document.getElementById("canvas").getContext("2d")
+            ctx.fillStyle = color
+            ctx.fillRect(x, y, this.width, this.height)
+        }
+    }
+
+    let toaDoX = 100
+    let toaDoY = 100
+    let color = "red"
+    let rec = new Rectangle(100, 50)
+    let demo
+
+    function move() {
+        toaDoX += 10
+        toaDoY += 3
+    }
+
+    function draw() {
+        let ctx = document.getElementById("canvas").getContext("2d")
+        ctx.clearRect(0, 0 , 1200, 600)
+        if (toaDoX === 1050) {
+            toaDoX = 100
+            toaDoY = 100
+            if (color === "red") {
+                color = "blue"
+            } else {
+                color = "red"
+            }
+        }
+        move()
+        rec.drawOnScreen(toaDoX, toaDoY, color)
+
+    }
+
+    function start() {
+        demo = setInterval(draw, 25)
+    }
+
+    function stop() {
+        clearInterval(demo)
+    }
+</script>
+</html>
