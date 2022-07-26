@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td><input id="mess1" placeholder="DT cua Vinh"></td>
+    <td><input id="mess2" placeholder="DT cua Hung"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="send" onclick="sentVinhToHung()"></td>
+    <td><input  type="button" value="send" onclick="sentHungToVing()"></td>
+  </tr>
+  <tr>
+    <td><p id="inbox1"></p></td>
+    <td><p id="inbox2"></p></td>
+  </tr>
+</table>
+</body>
+<script>
+  function sentVinhToHung() {
+    //lay du lieu tu the input
+    let mess = document.getElementById("mess1").value;
+    //soan tin nhan o dt cua Vinh
+    dtCuaVinh.writeMessage(mess);
+    //gui tin nhan cho Hung
+    dtCuaVinh.sendMessage(dtCuaHung)
+    //show hop thu den
+    showInbox();
+  }
+  function sentHungToVing() {
+    //lay du lieu tu the input
+    let mess = document.getElementById("mess2").value;
+    //soan tin nhan o dt cua Vinh
+    dtCuaHung.writeMessage(mess);
+    //gui tin nhan cho Hung
+    dtCuaHung.sendMessage(dtCuaVinh)
+    //show hop thu den
+    showInbox();
+  }
+  function showInbox() {
+    let inboxOfVinh = "";
+    for (let i = 0; i < dtCuaVinh.inbox.length; i++) {
+      inboxOfVinh += dtCuaVinh.inbox[i] + ",";
+    }
+    document.getElementById("inbox1").innerText = inboxOfVinh;
+
+    let inboxOfHung = "";
+    for (let i = 0; i < dtCuaHung.inbox.length; i++) {
+      inboxOfHung += dtCuaHung.inbox[i] + ",";
+    }
+    document.getElementById("inbox2").innerText = inboxOfHung;
+  }
+  // khai báo lớp
+  class Mobile {
+// - battery: int
+// - draft: String
+// - inbox: []
+// - sent: []
+    battery;
+    draft;
+    inbox;
+    sent;
+
+    constructor() {
+      this.battery = 100;
+      this.draft = "";
+      this.inbox = [];
+      this.sent = [];
+    }
+    checkOnOff(){
+      return this.battery>0;
+    }
+    charge(){
+      this.battery = 100;
+    }
+    writeMessage(newMessage){
+      this.draft = newMessage;
+    }
+    sendMessage(newPhone){
+      let mess = this.draft;
+      //chuyển thư nháp của đt hiện tại sang hộp thư đến của đt nhận
+      newPhone.inbox.push(mess);
+      //chuyển thư nháp của đt hiện tại sang hộp thư đã gửi của đt hiện tại
+      this.sent.push(mess);
+      //xoá thư nháp
+      this.draft = "";
+      this.battery--;
+    }
+  }
+
+  // khởi tạo đối tượng
+  let dtCuaVinh = new Mobile();
+  let dtCuaHung = new Mobile();
+</script>
+</html>
