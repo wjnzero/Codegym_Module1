@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    table {
+      width: 400px;
+
+    }
+
+    #title {
+      text-align: left;
+    }
+
+    button {
+      color: white;
+      background-color: #1caf1c;
+      border: none;
+      width: 60px;
+      height: 25px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body onload="displayProduct()">
+<h1>Add new product</h1>
+<label><input type="text" id="new"></label>
+<button style="margin-bottom: 20px" onclick="addProduct()">Add</button>
+<div id="demo"></div>
+<!--dùng button của bootstrap (tham khảo thêm ở w3school)-->
+<!--<button class="btn btn-primary">Click me</button>-->
+<!--<button class="btn btn-success">Click me</button>-->
+<!--<button class="btn btn-dark">Click me</button>-->
+<!--<button class="btn btn-warning">Click me</button>-->
+<!--<button class="btn btn-danger">Click me</button>-->
+<!--<button class="btn btn-info">Click me</button>-->
+</body>
+<script>
+  let arr = ["Sony", "Iphone", "Samsung", "Oppo"]
+
+  function addProduct() {
+    let newProduct = document.getElementById("new").value
+    arr.push(newProduct)
+    document.getElementById("new").value = ""
+    displayProduct()
+  }
+
+  function displayProduct() {
+    let data = "<table>"
+    data += "<tr>"
+    data += "<th colspan='2' id='title'>ProductName</th>"
+    data += "<th>" + arr.length + " products</th>"
+    data += "</tr>"
+    for (let i = 0; i < arr.length; i++) {
+      data += "<tr>"
+      data += "<td width='60%'>" + arr[i] + "</td>"
+      data += "<td><button>Edit</button></td>"
+      data += "<td><button>Delete</button></td>"
+      data += "</tr>"
+    }
+    data += "</table>"
+    document.getElementById("demo").innerHTML = data
+  }
+</script>
+</html>
