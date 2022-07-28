@@ -1,3 +1,4 @@
+
 import {Stage} from "../entities/stage.js";
 import {Player} from "../entities/fighters/player.js";
 import {PlayerCom} from "../entities/fighters/playerCom.js";

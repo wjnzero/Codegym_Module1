@@ -1,4 +1,4 @@
-import { Fighter } from "./fighter";
+import { Fighter } from "./fighter.js";
 
 export class Player extends Fighter{
     constructor(x,y,vanToc) {
