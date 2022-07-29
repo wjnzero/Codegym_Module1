@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:align-items="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            /*background-color: black;*/
+        }
+        /*canvas{*/
+        /*    width: 100%;*/
+        /*    object-fit: contain;*/
+        /*    image-rendering: crisp-edges;*/
+        /*    image-rendering: pixelated;*/
+        /*}*/
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<!--main div-->
+<div style="position: relative; display: inline-block">
+<!--    smaller-->
+    <div style="position: absolute; display: flex; width: 100%; align-items: center; padding: 20px">
+<!--        playerHealth-->
+        <div style="position: relative; height: 30px; width: 100%; display: flex; justify-content: flex-end">
+            <div style="background-color: red; height: 30px;"></div>
+            <div id="playerHealth" style="position: absolute; background: blue; top: 0; right: 0; bottom: 0; left: 0"></div>
+        </div>
+<!--        timer-->
+        <div style="background-color: aqua; width: 100px; height: 100px; flex-shrink: 0;"></div>
+<!--        enemyHealth-->
+        <div style="position: relative; height: 30px; width: 100%">
+        <div style="background-color: red; height: 30px;"></div>
+        <div id="enemyHealth" style="position: absolute; background: blue; top: 0; right: 0; bottom: 0; left: 0"></div>
+        </div>
+        <div></div>
+    </div>
+    <canvas></canvas>
+</div>
+
+
+<script src="main.js"></script>
+</body>
+</html>
