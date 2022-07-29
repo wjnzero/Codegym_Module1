@@ -35,7 +35,7 @@ class CreatNew {
         };
         this.color=color;
         this.attacking="";
-        this.health=100;
+        this.health=100;//a
     }
 
     draw(){
