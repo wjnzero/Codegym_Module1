@@ -130,6 +130,37 @@ function rectangularCollusion({rectangle1, rectangle2}) {
     )
 }
 
+
+function winner({player, enemy, timerId}) {
+    clearTimeout(timerId);
+    document.querySelector(`#draw`).style.display = `flex`;
+    if (player.health===enemy.health){
+        document.querySelector(`#draw`).innerHTML = `DRAW`;
+    }
+    else if (player.health > enemy.health){
+        document.querySelector(`#draw`).innerHTML = `Player 1 Win`;
+    }
+    else if (player.health < enemy.health){
+        document.querySelector(`#draw`).innerHTML = `Player 2 Win`;
+    }
+}
+
+let timer =60;
+let timerId;
+function decreaseTimer() {
+    if (timer > 0){
+        timerId = setTimeout(decreaseTimer, 1000);
+        timer--;
+        document.querySelector(`#timer`).innerHTML = timer.toString();
+    }
+
+    if (timer===0){
+        winner({player, enemy, timerId});
+    }
+}
+
+decreaseTimer()
+
 function animate() {
     window.requestAnimationFrame(animate);
     c.fillStyle = `black`;
@@ -138,13 +169,14 @@ function animate() {
     enemy.update();
 
     player.speed.x = 0;
+    // player.atkBox.position.x+=1;
     enemy.speed.x = 0;
 
     // playerMove
     if (keys.a.pressed && player.lastKey === `a`){
-        player.speed.x = -5;
+        player.speed.x = -10;
     } else if (keys.d.pressed && player.lastKey === `d`){
-        player.speed.x = 5;
+        player.speed.x = 10;
     }
     // enemyMove
     if (keys.ArrowLeft.pressed && enemy.lastKey === `ArrowLeft`){
@@ -160,8 +192,8 @@ function animate() {
             rectangle2: enemy
         }) && player.attacking){
         player.attacking = false;
-        enemy.health -= 20;
-        document.querySelector(`#enemyHealth`).style.width = enemy.health+"%";
+        enemy.health -= 1;
+        document.querySelector(`#enemyHealth`).style.width = enemy.health + "%";
     }
         //enemy
     if (
@@ -170,8 +202,12 @@ function animate() {
             rectangle2: player
         }) && enemy.attacking){
         enemy.attacking = false;
-        player.health -= 40;
-        document.querySelector(`#playerHealth`).style.width = player.health+"%";
+        player.health -= 50;
+        document.querySelector(`#playerHealth`).style.width = player.health + "%";
+    }
+    //break
+    if (enemy.health<=0 || player.health <= 0){
+        winner({player, enemy,timerId});
     }
 }
 
@@ -190,10 +226,11 @@ window.addEventListener(`keydown`,(event) =>{
             player.lastKey = `a`;
             break;
         case `w`:
-            player.speed.y = -20;
+            player.speed.y = -30;
             break;
         case ` `:
             player.attack();
+            player.atkBox.width+=10;
             break;
 
 
@@ -243,8 +280,4 @@ window.addEventListener(`keyup`,(event) =>{
             enemy.speed.y = -10;
             break;
     }
-
-
-
-
 });
