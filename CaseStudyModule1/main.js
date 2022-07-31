@@ -1,12 +1,26 @@
 const canvas = document.querySelector(`canvas`);
 const c = canvas.getContext(`2d`);
 
-canvas.width=1024;
-canvas.height=576;
+// canvas.width=1024;
+// canvas.height=576;
+canvas.width=1364;
+canvas.height=644;
 
 c.fillRect(0,0, canvas.width, canvas.height);
 
 const gravity = 1;
+const punch=document.querySelector('img[alt="rock"]');
+const punch1=document.querySelector('img[alt="punch"]');
+
+class Stage{
+    image;
+    constructor() {
+        this.image=document.querySelector('img[alt="background"]');
+    }
+    draw(context){
+        context.drawImage(this.image,0,0);
+    }
+}
 
 class CreatNew {
     position;
@@ -17,8 +31,12 @@ class CreatNew {
     atkBox;
     color;
     attacking;
-    health
-    constructor({position,speed, color=`red`,offset}) {
+    health;
+    image;
+    atkImg;
+    constructor({position,speed, color=`red`,offset,image,atkImg}) {
+        this.image=image;
+        this.atkImg=atkImg;
         this.position = position;
         this.speed = speed;
         this.width=50;
@@ -39,12 +57,14 @@ class CreatNew {
     }
 
     draw(){
-        c.fillStyle=this.color;
-        c.fillRect(this.position.x, this.position.y, this.width,this.height);
+        // c.fillStyle=this.color;
+        // c.fillRect(this.position.x, this.position.y, this.width,this.height);
+        c.drawImage(this.image,this.position.x, this.position.y, this.width, this.height);
         //atkBox
         if (this.attacking){
-            c.fillStyle=`orange`;
-            c.fillRect(this.atkBox.position.x, this.atkBox.position.y, this.atkBox.width, this.atkBox.height);
+            // c.fillStyle=`orange`;
+            // c.fillRect(this.atkBox.position.x, this.atkBox.position.y, this.atkBox.width, this.atkBox.height);
+               c.drawImage(this.atkImg,this.atkBox.position.x, this.atkBox.position.y, this.atkBox.width, this.atkBox.height);
         }
     }
 
@@ -84,13 +104,15 @@ const player = new CreatNew({
     offset: {
         x: 0,
         y: 0
-    }
+    },
+    image: punch,
+    atkImg: punch1
 });
 
 const enemy= new CreatNew({
     position: {
-        x: 400,
-        y: 100
+        x: 1300,
+        y: 0
     },
     speed: {
         x: 0,
@@ -100,7 +122,9 @@ const enemy= new CreatNew({
     offset: {
         x: -50,
         y: 0
-    }
+    },
+    image: punch1,
+    atkImg: punch
 });
 
 console.log(player);
@@ -159,14 +183,19 @@ function decreaseTimer() {
     }
 }
 
-decreaseTimer()
+decreaseTimer();
 
 function animate() {
     window.requestAnimationFrame(animate);
+    const stage = new Stage();
     c.fillStyle = `black`;
     c.fillRect(0,0, canvas.width, canvas.height);
+    stage.draw(c);
     player.update();
     enemy.update();
+
+
+
 
     player.speed.x = 0;
     // player.atkBox.position.x+=1;
@@ -209,6 +238,7 @@ function animate() {
     if (enemy.health<=0 || player.health <= 0){
         winner({player, enemy,timerId});
     }
+    // window.requestAnimationFrame(animate);
 }
 
 animate();
@@ -249,6 +279,9 @@ window.addEventListener(`keydown`,(event) =>{
             break;
         case `ArrowDown`:
             enemy.attack();
+            //
+            enemy.speed.x=-50;
+
             break;
     }
 });

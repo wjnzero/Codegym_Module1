@@ -7,14 +7,17 @@
         body{
             /*background-color: black;*/
         }
-        /*canvas{*/
-        /*    width: 100%;*/
-        /*    object-fit: contain;*/
-        /*    image-rendering: crisp-edges;*/
-        /*    image-rendering: pixelated;*/
-        /*}*/
+        canvas{
+            width: 100%;
+            object-fit: contain;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
+        }
         * {
             box-sizing: border-box;
+        }
+        img {
+            display: none;
         }
     </style>
 </head>
@@ -40,6 +43,9 @@
     <div id="draw" style="position: absolute; color: white;display: flex; align-items: center; justify-content: center; top: 0; left: 0; right: 0; bottom: 0;display: none">Tie</div>
     <canvas></canvas>
 </div>
+<img src="img/punch.png" alt="punch"/>
+<img src="img/bk.png" alt="background"/>
+<img src="img/hug.jpg" alt="rock"/>
 <script src="main.js"></script>
 </body>
 </html>
