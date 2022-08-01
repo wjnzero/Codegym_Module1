@@ -9,8 +9,12 @@ canvas.height=644;
 c.fillRect(0,0, canvas.width, canvas.height);
 
 const gravity = 1;
-const punch=document.querySelector('img[alt="rock"]');
-const punch1=document.querySelector('img[alt="punch"]');
+const hang=document.querySelector('img[alt="hang"]');
+const thuong=document.querySelector('img[alt="thuong"]');
+const hangDown=document.querySelector('img[alt="hangDown"]');
+const thuongDown=document.querySelector('img[alt="thuongDown"]');
+const punch=document.querySelector('img[alt="punch"]');
+const kick=document.querySelector('img[alt="kick"]');
 
 class Stage{
     image;
@@ -39,8 +43,8 @@ class CreatNew {
         this.atkImg=atkImg;
         this.position = position;
         this.speed = speed;
-        this.width=50;
-        this.height=150;
+        this.width=100;
+        this.height=350;
         this.lastKey="";
         this.atkBox={
             position: {
@@ -64,7 +68,7 @@ class CreatNew {
         if (this.attacking){
             // c.fillStyle=`orange`;
             // c.fillRect(this.atkBox.position.x, this.atkBox.position.y, this.atkBox.width, this.atkBox.height);
-               c.drawImage(this.atkImg,this.atkBox.position.x, this.atkBox.position.y, this.atkBox.width, this.atkBox.height);
+               c.drawImage(this.atkImg,this.atkBox.position.x, this.atkBox.position.y+150, this.atkBox.width, this.atkBox.height);
         }
     }
 
@@ -105,13 +109,13 @@ const player = new CreatNew({
         x: 0,
         y: 0
     },
-    image: punch,
-    atkImg: punch1
+    image: hang,
+    atkImg: punch
 });
 
 const enemy= new CreatNew({
     position: {
-        x: 1300,
+        x: 1200,
         y: 0
     },
     speed: {
@@ -123,11 +127,11 @@ const enemy= new CreatNew({
         x: -50,
         y: 0
     },
-    image: punch1,
-    atkImg: punch
+    image: thuong,
+    atkImg: kick
 });
 
-console.log(player);
+// console.log(player);
 
 const keys = {
     a: {
@@ -163,9 +167,11 @@ function winner({player, enemy, timerId}) {
     }
     else if (player.health > enemy.health){
         document.querySelector(`#draw`).innerHTML = `Player 1 Win`;
+        enemy.image = thuongDown;
     }
     else if (player.health < enemy.health){
         document.querySelector(`#draw`).innerHTML = `Player 2 Win`;
+        player.image = hangDown;
     }
 }
 
@@ -187,6 +193,7 @@ decreaseTimer();
 
 function animate() {
     window.requestAnimationFrame(animate);
+    // console.log(enemy.position.x);
     const stage = new Stage();
     c.fillStyle = `black`;
     c.fillRect(0,0, canvas.width, canvas.height);
@@ -204,14 +211,31 @@ function animate() {
     // playerMove
     if (keys.a.pressed && player.lastKey === `a`){
         player.speed.x = -10;
+        // if (this.position.x>c.canvas.width-width||this.position.x<0){
+        //     this.vanToc=-this.vanToc;
+        // }
+        if (player.position.x<0){
+            player.speed.x = 0;
+        }
+
     } else if (keys.d.pressed && player.lastKey === `d`){
         player.speed.x = 10;
+        if (player.position.x>canvas.width-80){
+            player.speed.x = 0;
+        }
     }
     // enemyMove
     if (keys.ArrowLeft.pressed && enemy.lastKey === `ArrowLeft`){
-        enemy.speed.x = -1;
+        enemy.speed.x = -4;
+        if (enemy.position.x+20<0){
+            enemy.speed.x = 0;
+        }
+
     } else if (keys.ArrowRight.pressed && enemy.lastKey === `ArrowRight`){
-        enemy.speed.x = 1;
+        enemy.speed.x = 4;
+        if (enemy.position.x>canvas.width-100){
+            enemy.speed.x = 0;
+        }
     }
     // hit box
         //player
@@ -222,6 +246,7 @@ function animate() {
         }) && player.attacking){
         player.attacking = false;
         enemy.health -= 1;
+
         document.querySelector(`#enemyHealth`).style.width = enemy.health + "%";
     }
         //enemy
@@ -238,13 +263,14 @@ function animate() {
     if (enemy.health<=0 || player.health <= 0){
         winner({player, enemy,timerId});
     }
+
     // window.requestAnimationFrame(animate);
 }
 
 animate();
 
 window.addEventListener(`keydown`,(event) =>{
-    // console.log(event.key);
+     // console.log(event.key);
     switch (event.key) {
         // playerKey
         case `d`:
@@ -256,7 +282,10 @@ window.addEventListener(`keydown`,(event) =>{
             player.lastKey = `a`;
             break;
         case `w`:
-            player.speed.y = -30;
+            if (player.position.y+50 < 0){
+                player.speed.y = 0
+            }
+            else player.speed.y = -20;
             break;
         case ` `:
             player.attack();
@@ -275,12 +304,16 @@ window.addEventListener(`keydown`,(event) =>{
             enemy.lastKey = `ArrowLeft`;
             break;
         case `ArrowUp`:
-            enemy.speed.y = -10;
+            if (enemy.position.y+50 < 0){
+                enemy.speed.y = 0
+            }
+            else enemy.speed.y = -10;
+
             break;
-        case `ArrowDown`:
+        case `Control`:
             enemy.attack();
             //
-            enemy.speed.x=-50;
+            // enemy.speed.x=-50;
 
             break;
     }
