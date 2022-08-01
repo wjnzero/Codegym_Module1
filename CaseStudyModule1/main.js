@@ -234,7 +234,6 @@ function animate() {
         }) && player.attacking){
         player.attacking = false;
         enemy.health -= 1;
-
         document.querySelector(`#enemyHealth`).style.width = enemy.health + "%";
     }
         //enemy
@@ -245,6 +244,8 @@ function animate() {
         }) && enemy.attacking){
         enemy.attacking = false;
         player.health -= 50;
+        player.position.x = 0;
+        player.position.y = 0;
         document.querySelector(`#playerHealth`).style.width = player.health + "%";
     }
     //break
