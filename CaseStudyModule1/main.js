@@ -61,13 +61,9 @@ class CreatNew {
     }
 
     draw(){
-        // c.fillStyle=this.color;
-        // c.fillRect(this.position.x, this.position.y, this.width,this.height);
         c.drawImage(this.image,this.position.x, this.position.y, this.width, this.height);
         //atkBox
         if (this.attacking){
-            // c.fillStyle=`orange`;
-            // c.fillRect(this.atkBox.position.x, this.atkBox.position.y, this.atkBox.width, this.atkBox.height);
                c.drawImage(this.atkImg,this.atkBox.position.x, this.atkBox.position.y+150, this.atkBox.width, this.atkBox.height);
         }
     }
@@ -158,7 +154,6 @@ function rectangularCollusion({rectangle1, rectangle2}) {
     )
 }
 
-
 function winner({player, enemy, timerId}) {
     clearTimeout(timerId);
     document.querySelector(`#draw`).style.display = `flex`;
@@ -201,19 +196,12 @@ function animate() {
     player.update();
     enemy.update();
 
-
-
-
     player.speed.x = 0;
-    // player.atkBox.position.x+=1;
     enemy.speed.x = 0;
 
     // playerMove
     if (keys.a.pressed && player.lastKey === `a`){
         player.speed.x = -10;
-        // if (this.position.x>c.canvas.width-width||this.position.x<0){
-        //     this.vanToc=-this.vanToc;
-        // }
         if (player.position.x<0){
             player.speed.x = 0;
         }
@@ -263,7 +251,6 @@ function animate() {
     if (enemy.health<=0 || player.health <= 0){
         winner({player, enemy,timerId});
     }
-
     // window.requestAnimationFrame(animate);
 }
 
@@ -291,7 +278,6 @@ window.addEventListener(`keydown`,(event) =>{
             player.attack();
             player.atkBox.width+=10;
             break;
-
 
         // enemyKey
 
